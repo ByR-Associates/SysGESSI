@@ -37,5 +37,9 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('categories');
 
         Permission::generateFor('settings');
+
+        Permission::generateFor('clientes');
+
+        Permission::generateFor('solicitud_estudios');
     }
 }

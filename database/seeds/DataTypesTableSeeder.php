@@ -95,6 +95,63 @@ class DataTypesTableSeeder extends Seeder
                 'description'           => '',
             ])->save();
         }
+
+        $dataType = $this->dataType('slug', 'clientes');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'clientes',
+                'display_name_singular' => 'Cliente',
+                'display_name_plural'   => 'Clientes',
+                'icon'                  => 'voyager-person',
+                'model_name'            => 'SysGESSI\\Cliente',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'solicitud-estudios');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'solicitud_estudios',
+                'display_name_singular' => 'Solicitud Estudio',
+                'display_name_plural'   => 'Solicitud Estudios',
+                'icon'                  => 'voyager-list-add',
+                'model_name'            => 'SysGESSI\\SolicitudEstudio',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+/*
+        $dataType = $this->dataType('slug', 'vehiculos');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'vehiculos',
+                'display_name_singular' => 'Vehiculo',
+                'display_name_plural'   => 'Vehiculos',
+                'icon'                  => 'voyager-truck',
+                'model_name'            => 'SysGESSI\\Vehiculo',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'equipos');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'equipos',
+                'display_name_singular' => 'Equipo',
+                'display_name_plural'   => 'Equipos',
+                'icon'                  => 'voyager-settings',
+                'model_name'            => 'SysGESSI\\Equipos',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }*/
+
     }
 
     /**

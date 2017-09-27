@@ -11,6 +11,380 @@ class DataRowsTableSeeder extends Seeder
      */
     public function run()
     {
+        $solicitudEstudioDataType = DataType::where('slug','solicitud-estudios')->firstOrFail();
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'id');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'number',
+                'display_name' => 'ID',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 1,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'descripcion');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Descripción',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 2,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'cliente_id');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'select_dropdown',
+                'display_name' => 'Cliente',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'obra');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Obra',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 4,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'parroquia_id');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'select_dropdown',
+                'display_name' => 'Parroquia',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'direccion');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Dirección',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'referencia');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Referencia',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 7,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'coordenadas');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'coordinates',
+                'display_name' => 'Coordenadas',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 8,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'contacto');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Contacto',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 9,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'progreso');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'number',
+                'display_name' => 'progreso',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'estado');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Estado',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 11,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'created_at',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 12,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($solicitudEstudioDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'updated_at',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 13,
+            ])->save();
+        }
+
+
+        $clienteDataType = DataType::where('slug', 'clientes')->firstOrFail();
+
+        $dataRow = $this->dataRow($clienteDataType, 'id');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'number',
+                'display_name' => 'ID',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 1,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'tipo_documento');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Tipo Documento',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 2,
+            ])->save();
+        }
+        
+        $dataRow = $this->dataRow($clienteDataType, 'numero_documento');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'No. Documento',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 2,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'nombre');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Nombre',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'apellido');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Apellido',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 4,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'parroquia_id');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'select_dropdown',
+                'display_name' => 'Parroquia',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'direccion');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'text',
+                'display_name' => 'Dirección',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => '',
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'activo');
+        if(!$dataRow->exists){
+            $dataRow->fill([
+               'type'         => 'checkbox',
+                'display_name' => 'activo',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 7,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'created_at',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 8,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($clienteDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'updated_at',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 9,
+            ])->save();
+        }
+
+
         $postDataType = DataType::where('slug', 'posts')->firstOrFail();
         $pageDataType = DataType::where('slug', 'pages')->firstOrFail();
         $userDataType = DataType::where('slug', 'users')->firstOrFail();
@@ -927,6 +1301,8 @@ class DataRowsTableSeeder extends Seeder
                 'order'        => 9,
             ])->save();
         }
+
+        
     }
 
     /**
